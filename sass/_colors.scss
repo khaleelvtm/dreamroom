@@ -1,0 +1,36 @@
+@each $key, $value in $colors {
+    .text-#{$key} {
+        color: $value;
+    }
+    .background-#{$key} {
+        background-color: $value;
+    }
+
+    @if($value != black and $value != white) {
+        // Light Color 
+        @for $i from 1 through 5 {
+            .text-#{$key}-light-#{$i} {
+                color: mix(white, $value, $i * 10%);
+                &:hover {
+                    color: mix(white, $value, $i * 20%);
+                }
+            }
+            .background-#{$key}-light-#{$i} {
+                background-color: mix(white, $value, $i * 7%);
+                &:hover {
+                    background-color: mix(white, $value, $i * 14%);
+                }
+            }
+        }
+
+        // Dark Color
+        @for $i from 1 through 5 {
+            .text-#{key}-dark-#{$i} {
+                color: mix(black, $value, $i * 10%);
+            }
+            .background-#{key}-dark-#{$i} {
+                background-color: mix(black, $value, $i * 10%);
+            }
+        }
+    }    
+}

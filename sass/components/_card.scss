@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+.card{
+    display: block;
+    border: $border-width map-get($borders, dashed) $border-color;
+    padding: $base-padding;
+    border-radius: $border-radus;
+    .card-title{
+        font-size: 2rem;
+        font-weight: 600;
+        color: $text-main;
+        font-size: $lg-font-size;
+    }
+    .card-body{
+        padding: $base-padding;
+        border-top: $border-width solid $border-color;
+        font-size: $sm-font-size;
+        color: map-get($colors, primary);
+    }
+}

@@ -1,0 +1,5 @@
+@for $i from 1 through 6 {
+    h#{7 - $i} {
+        font-size: $i * $base-font-size * 0.75;
+    }
+}

@@ -1,0 +1,52 @@
+// Main color
+$primary: #ffc100;
+$secondery: #003229;
+$dark: #082823;
+$border-color: #0e463b;
+
+// Colours
+$colors: (
+    "primary": $primary,
+    "secondery": $secondery,
+    "blue": #1919e6,
+    "red": #e61919,
+    "yellow": #e6e619,
+    "green": #19e635,
+    "orange": #ffa600,
+    "purple": #9900ff,
+    "gray": #808080,
+    "black": black,
+    "white": white,
+);
+
+//Text Color
+$text-main: #2e4b46;
+$text-second: #9fb5b1;
+
+// Spacing
+$base-padding: 15px;
+$base-margin: 15px;
+
+//Border
+$border-width: 1px;
+$border-radus: 10px;
+$borders: (
+    "solid": solid,
+    "dashed": dashed,
+);
+
+//Font
+$base-font-size: 1rem;
+$sm-font-size: $base-font-size * 0.75;
+$lg-font-size: $base-font-size * 1.5;
+$xl-font-size: $base-font-size * 2;
+
+$font-one: "IBM Plex Sans", sans-serif;
+$font-two: "Berkshire Swash", cursive;
+$font-weight: (
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semiBold": 600,
+    "bold": 700,
+);

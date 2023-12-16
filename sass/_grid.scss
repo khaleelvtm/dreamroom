@@ -1,0 +1,76 @@
+@use "sass:math";
+
+$grid-column: 12;
+$grid-gap: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+);
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+
+$align-items: center, flex-start, flex-end, stretch, baseline;
+
+// Base Layout
+.container-fluid {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container {
+    width: 90%;
+    max-width: 1700px;
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    //flex-flow: row wrap;
+    gap: 30px;
+    margin: 0 -15px;
+}
+
+// Grid Gap
+@each $key, $value in $grid-gap {
+    .gap-#{$key} > * {
+        padding: 0 $value;
+    }
+    .gap-#{$key} {
+        margin-left: -$value;
+        margin-right: -$value;
+    }
+}
+
+// Justify Content Class
+@each $value in $layout-values {
+    .justify-#{$value} {
+        justify-content: $value;
+    }
+}
+//
+@each $value in $align-items {
+    .align-#{$value} {
+        align-items: $value;
+    }
+}
+// Columns
+@include xs {
+    @for $i from 1 through $grid-column {
+        .col-xs-#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-column);
+        }
+    }
+}
+
+@include sm {
+    @for $i from 1 through $grid-column {
+        .col-sm-#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-column);
+        }
+    }
+}
